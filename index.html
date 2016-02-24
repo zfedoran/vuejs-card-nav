@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Vue.js Card Navigation</title>
+    
+        <!-- Dependencies -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.6/hammer.min.js"></script>
+        <script type="text/javascript" src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.0/chance.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.css">
+
+        <!-- Application -->
+        <script type="text/javascript" src="app.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+
+        <!-- Vue.js Main App -->
+        <div id           = "app"
+             v-bind:style = "{'font-size': 0.04 * width + 'px' }">
+
+            <!-- Page Deck -->
+            <div class        = "owl-carousel"
+                 v-for        = "section in sections"
+                 v-bind:style = "{  background: section.color, top: getOffsetValue($index) + 'px' }">
+
+                <!-- Page Card -->
+                <div class        = "page"
+                     v-for        = "page in section.pages"
+                     v-bind:style = "{ background: section.color, height: height + 'px' }">
+
+                    <!-- Page Content -->
+                    <h1>{{ page.title }}</h1>
+                    <p>{{ page.content }}</p>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
