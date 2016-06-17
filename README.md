@@ -7,4 +7,4 @@ Navigate through pages as if it were a deck of cards.
 
 # Live Demo
 
-https://jsfiddle.net/okv0rgrk/1833/
+https://jsfiddle.net/okv0rgrk/4482/
